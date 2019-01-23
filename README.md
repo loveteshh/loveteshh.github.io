@@ -1,2 +1,2 @@
 # loveteshh.github.io
-[Link Here](lovetesh.me)
+[Link Here](http://lovetesh.me)
