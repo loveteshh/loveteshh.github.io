@@ -1,74 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-    <!--<link href = "CSS.css" rel = "stylesheet">-->
-    <style>
-     ul {
-         display: flex;
-         flex-wrap: wrap;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+<html>
+<title>lo.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="port.css">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="lo.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14loExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
 }
 
-li {
-  float: left;
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-li:last-child {
-  border-right: none;
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('./images/cropped-img_20181115_171020_593-4.jpg');
+  min-height: 100%;
 }
 
-li a {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("/loimages/parallax2.jpg");
+  min-height: 400px;
 }
 
-li a:hover {
-    background-color: #111;
-    color: white;
-} 
-.container {
-  position: relative;
-}
+.wide {letter-spacing: 10px;}
+.hover-opacity {cursor: pointer;}
 
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 18px;
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
 }
-
-img { 
-  width: 100%;
-  height: auto;
-  opacity: 0.7;
-}
-
-    </style>
-</head>
+</style>
 <body>
-    <div id = "outer-layer">
-        <div class = "table">
-    <ul id="horizontal-list">
-        <li><a href="">Home</a></li>
-        <li><a href="">Contact</a></li>
-    </ul>
+
+<!-- Navbar (sit on top) -->
+<div class="top">
+  <div class="bar" id="myNavbar">
+    <a class="bar-item button hover-black hide-medium hide-large right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="bar-item button">HOME</a>
+    <a href="#about" class="bar-item button hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#portfolio" class="bar-item button hide-small"><i class="fa fa-th"></i> EXPERIENCE</a>
+    <a href="#contact" class="bar-item button hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="bar-block white hide hide-large hide-medium">
+    <a href="#about" class="bar-item button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#portfolio" class="bar-item button" onclick="toggleFunction()">EXPERIENCE</a>
+    <a href="#contact" class="bar-item button" onclick="toggleFunction()">CONTACT</a>
+    <a href="#" class="bar-item button">SEARCH</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 display-container opacity-min" id="home">
+  <div class="display-middle" style="white-space:nowrap;">
+    <span class="center padding-large black xlarge wide animate-opacity"><b>Hi There! I am Lovetesh</b></span>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="content container padding-64" id="about">
+  <h3 class="center"><b>ABOUT ME</b></h3>
+  <p class="center"><em>Machine Learning Enthusiast</em></p>
+  <div class="row">
+    <div class="col m6 center padding-large">
+      <img src="./images/IMG_4142.jpg" class="round image" alt="Photo of Me" width="500" height="333">
     </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="col m6 hide-small padding-large">
+      <p>I am an Engineering student currently pursuing my Bachelor's degree from 
+        <a href="http://www.bvcoend.ac.in" target="_blank">Bharati Vidyapeeth's College of Engineering, New Delhi</a>
+        . Habitual to steep learning curve, currently learning and implementing new technologies swiftly.
+        Most of my time is spent in building and applying the sorts of analytical models
+        to machine learning projects. I spend my spare time in Web Development.</p>
     </div>
-    <div class="container">
-            <img src="images/cropped-img_20181115_171020_593-4.jpg" alt="SOH 2018" width="1000" height="300">
-            <div class="center"><h1></h1></div>
+  </div>
+  <p class="large center padding-16">I'm really good at:</p>
+  <p class="wide"><i class="fas fa-sitemap"></i>Machine Learning</p>
+  <div class="light-grey">
+    <div class="container padding-small dark-grey center" style="width:80%">80%</div>
+  </div>
+  <p class="wide"><i class="fa fa-laptop"></i>Web Development</p>
+  <div class="light-grey">
+    <div class="container padding-small dark-grey center" style="width:70%">70%</div>
+  </div>
+  <p class="wide"><i class="far fa-keyboard"></i>Data Structures & Algorithms</p>
+  <div class="light-grey">
+    <div class="container padding-small dark-grey center" style="width:90%">90%</div>
+  </div>
+</div>
+
+<div class="row center dark-grey padding-16">
+  <div class="xlarge">
+    Skills
+  </div>
+</div>
+
+
+
+<!-- Container (Contact Section) -->
+<div class="content container padding-64" id="contact">
+  <h3 class="center"><b>CONTACT</b></h3>
+  <p class="center"><em>I'd love your feedback!</em></p>
+
+  <div class="row padding-32 section">
+    <div class="col m8 panel">
+      <div class="large margin-bottom">
+        <i class="fa fa-map-marker fa-fw hover-text-black xlarge margin-right"></i> Delhi, India<br>
+        <i class="fa fa-phone fa-fw hover-text-black xlarge margin-right"></i> Phone: +91 9560315760<br>
+        <i class="fa fa-envelope fa-fw hover-text-black xlarge margin-right"></i> Email: loveteshh@gmail.com<br>
+      </div>
+      <p>Leave me a note, I'll get back to you ASAP:</p>
+      <form action="/action_page.php" target="_blank">
+        <div class="row-padding" style="margin:0 -16px 8px -16px">
+          <div class="half">
+            <input class="input border" type="text" placeholder="Name" required name="Name">
           </div>
+          <div class="half">
+            <input class="input border" type="text" placeholder="Email" required name="Email">
+          </div>
+        </div>
+        <input class="input border" type="text" placeholder="Message" required name="Message">
+        <button class="button black right section" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="center black padding-64 opacity hover-opacity-off">
+  <a href="#home" class="button light-grey"><i class="fa fa-arrow-up margin-right"></i>To the top</a>
+  <div class="xlarge section">
+    <i class="fa fa-facebook-official hover-opacity"></i>
+    <i class="fa fa-instagram hover-opacity"></i>
+    <i class="fa fa-twitter hover-opacity"></i>
+    <i class="fa fa-linkedin hover-opacity"></i>
+  </div>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "bar" + " card" + " animate-top" + " white";
+    } else {
+        navbar.className = navbar.className.replace(" card animate-top white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("show") == -1) {
+        x.className += " show";
+    } else {
+        x.className = x.className.replace(" show", "");
+    }
+}
+</script>
+
 </body>
 </html>
